@@ -1,0 +1,168 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <string.h>
+
+
+//struct book
+//{
+//	//书名
+//	char bookName[20];
+//	//作者
+//	char bookAuthor[20];
+//	//价格
+//	int  bookPrice;
+//};
+//int main()
+//{
+//	struct book b1 ={"C语言编程设计","不知道",55};
+//	printf("书名是：%s\n",b1.bookName);
+//	printf("作者是：%s\n",b1.bookAuthor);
+//	printf("价格是：%d元\n",b1.bookPrice);
+//	b1.bookPrice = 10;
+//	printf("价格是：%d元\n",b1.bookPrice);
+//	return 0;
+//}
+
+
+
+
+//指针的简单使用
+//int main()
+//{
+//	int a = 10;
+//	int* p;
+//	printf("更改前：%d\n",a);
+//	p = &a;
+//	printf("%p\n",&a);
+//	printf("%p\n",p);
+//	*p = 30;
+//	printf("更改后：%d\n",a);
+//	return 0;
+//}
+
+
+//if函数的简单嵌套使用
+//int main()
+//{
+//	int w = 0;
+//	scanf("%d",&w);
+//
+//	if (w<60)
+//		printf("不及格");
+//	else if (w>=60 && w<90)
+//		printf("及格");
+//	else
+//		printf("优秀");
+//	return 0;
+//}
+
+
+//if函数的简单应用
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d",&a);
+//	if (a<=3)
+//		printf("这是一个小于3的数");
+//	else
+//		printf("这是大于3的数");
+//	return 0;
+//
+//}
+
+
+
+//
+////swith分支的简单应用
+//
+//int main()
+//{
+//	int mun = 0;
+//	scanf("%d",&mun);//在此处的引用中不可使用“\n”符号，容易引起程序错误
+//	switch(mun)
+//	{
+//	case 0:
+//		printf("此信息为真\n");
+//		break;
+//	case 1:
+//		printf("此信息为假\n");
+//		break;
+//	default://用于异常情况的处理
+//		printf("此信息依旧为假\n");
+//		break;
+//	}
+//	return 0;;
+//
+
+
+//int main()
+//{
+//	int e = 0;
+//	scanf("%d",&e);
+//	switch (e)
+//	{
+//	case 0:
+//		printf("星期天\n");
+//		break;
+//	case 1:
+//		printf("星期一\n");
+//		break;
+//	case 2:
+//		printf("星期二\n");
+//		break;
+//	case 3:
+//		printf("星期三\n");
+//		break;
+//	case 4:
+//		printf("星期四\n");
+//		break;
+//	case 5:
+//		printf("星期五\n");
+//		break;
+//	case 6:
+//		printf("星期六\n");
+//		break;
+//	default:
+//		printf("输入错误，请重试！！！\n");
+//		break;
+//	}
+//	return 0;
+//}
+
+
+//工作日与休息日
+//int main()
+//{
+//	int y = 0;
+//	scanf("%d",&y);
+//	switch(y)
+//	{
+//	case 1:
+//	case 2:
+//	case 3:
+//	case 4:
+//	case 5:
+//		printf("今天是工作日，你该工作了");
+//		break;
+//	case 6:
+//	case 7:
+//		printf("今天是休息日，你该休息了");
+//		break;
+//	default:
+//		printf("你在想什么，都输入错误了！！请重试！！！");
+//	}
+//	return 0;
+//}
+
+//}
+//while循环的简单应用
+//int main()
+//{
+//	int i = 0;
+//	while(i<=5)
+//	{
+//		printf("%d\n",i);
+//		i++;
+//	}
+//	return 0;
+//}
