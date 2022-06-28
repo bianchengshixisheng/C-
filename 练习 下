@@ -1,0 +1,189 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+
+//计算一百以内的9的个数
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i=1; i<=100; i++)
+//	{
+//		//i取模，余数为9则满足条件   计算的是十位为9的个数
+//		if (i%10 == 9)
+//			count++;
+//		//i除以10，的到的余数为9则满足条件    计算的是个位为9的个数
+//		//else if (i/10 == 9)  此处由于99即满足十位为9，个位也为9的条件，所以99需要并列计算两次。
+//		if (i/10 == 9)
+//			count++;
+//	}
+//	printf("count = %d\n",count);
+//	return 0;
+//
+//}
+
+
+//计算一串分数：1/1-1/2+1/3-1/4+....+1/99-1/100的和
+//int main()
+//{
+//	int i= 0;
+//	double sum = 0.0;
+//	int flag = 1;
+//	for (i=1; i<=100; i++)
+//	{
+//		//sum += 1/i;   由于1、1=1 而1/2=0...1 1/3=1...0 如此，需将1/i中的某一方设置为
+//		//浮点型数字，方可计算出来
+//		sum += flag*1.0/i;
+//		//采用负负得正的想法
+//		flag = -flag;
+//	}
+//	printf("sum = %lf\n",sum);//若为浮点型，此处应为为双精度浮点型（lf）
+//	return 0;
+//}
+//本题还有另外一种写法，分母为奇数的分数相加，分母为偶数的分数相加，偶数的和减去奇数的和。
+
+
+
+//求十个整数的最大值
+//int main()
+//{
+//	int arr1[]={-1,-2,-3,-4,-5,-6,-7,-8,-9,-10};
+//	int arr2[]={1,2,3,4,5,6,7,8,9,10};
+//	//将数组内的一个数字假设为最大值，然后将假设的最大值通过循环去与数组内的每一个值相比较。
+//	int max1 = arr1[0];//数组1的最大值
+//	int max2 = arr2[0];//数组2的最大值
+//	int i = 0;
+//	int j = 0;
+//	int sz1 = sizeof(arr1)/sizeof(arr1[1]);
+//	int sz2 = sizeof(arr2)/sizeof(arr2[1]);
+//	//数组1的最大值
+//	for (i= 1; i<sz1; i++)
+//	{
+//		if (arr1[i] > max1)
+//			max1 = arr1[1];
+//	}
+//		//数组2的最大值
+//	for (j= 1; j<sz2; j++)
+//	{
+//		if (arr2[j] > max2)
+//			max2 = arr2[1];
+//	}
+//	printf("负数 max = %d\n",max1);
+//	printf("正数 max = %d\n",max2);
+//	return 0;
+//
+//}
+
+
+
+//乘法口诀
+//int main()
+//{
+//	int i = 0;
+//	for (i=1; i<=9; i++)
+//	{
+//		int j = 0;
+//		for (j=1; j<=i; j++)
+//		{
+//			printf("%d * %d = %-2d ",i,j,i*j);//'%2d'意为打印的数字为两位显示，
+//											 //	'%-2d'意为打印的数字是两位，并且是左对齐。
+//		}
+//		printf("\n");//打印完一行之后需要换行显示
+//	}
+//	return 0;
+//
+//}
+
+
+
+
+//猜数字游戏1-100
+//#include<stdlib.h>
+//#include<time.h>
+//void menu()
+//{
+//	printf("##################################\n");
+//	printf("#####    1.play    0.exit   ######\n");
+//	printf("##################################\n");
+//	printf("\n");
+//}
+//
+//void game()
+//{
+//	//1.生成一个用来猜的1-100之间的随机数。
+//	//2.判断随机数的大小
+//	int random = 0;
+//	int guess = 0;
+//	//random = rand();//rand函数用于生成随机数   最大值是32767  在此处，值的范围过大了
+//	random = rand()%100+1;//取模之后的数最大范围是在1-99，所以符合
+//	//设置rand函数的生成起始点，srand函数用于设置起始点。
+//	//time_t time(time_t *timer)
+//	//用时间戳来设置随机数的生成起始点
+//	//srand((unsigned int)time(NULL));  此处由于每一次进入游戏都将调用一次，由于时间戳相距较近，使用生成的随机数也会相距较近。
+//	while(1)
+//	{
+//		printf("请猜数字：>\n");
+//		scanf("%d",&guess);
+//		if(guess>random)
+//		{
+//				printf("你的数猜大了\n");
+//		}
+//		else if (guess<random)
+//		{
+//			printf("哎呀，你的数猜小了\n");
+//		}
+//		else
+//		{	
+//			printf("不错，不错，猜的刚刚好\n");
+//			break;
+//		}
+//	}
+//}
+//int main()
+//{
+//	//游戏的进行需要至少进入游戏一次，所以需要使用do..while函数
+//	int input = 0;
+//	srand((unsigned int)time(NULL));//为防止生成数大小相近，每一个项目调用一次即可。
+//	do
+//	{
+//	menu();
+//	printf("请选择:>");//选择是否玩游戏
+//	scanf("%d",&input);//获取选择的内容
+//	//规划选择内容的可能值采用switch分支语句
+//	switch(input)
+//	{
+//	case 1:
+//		printf("好的，那让我们开始游戏吧\n");
+//		game();
+//		break;
+//	case 0:
+//		printf("欢迎下次再来\n");
+//		break;
+//	default:
+//		printf("是我的错吗？不是，是你选择错误！\n");
+//		break;
+//	}
+//	}
+//	while(input);//在此处，如果input值为0（不玩），条件直接不成立-退出，如果input值为非0（玩），条件成立-玩儿。
+//	return 0;
+//
+//}
+//关机程序
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	char input[20]={};
+	system("shutdown -s -t 60");//等同于cmd内的操作
+again:
+	printf("请注意，你的电脑将在一分钟后关机，如果输入：卧室猪，则取消关机\n请输入：>");
+	scanf("%s",input);
+	if (strcmp(input,"我是猪")==0)
+	{
+		system("shutdown -a");
+	}
+	else
+	{
+		goto again;
+	}
+}
