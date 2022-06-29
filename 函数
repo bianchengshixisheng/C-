@@ -1,0 +1,124 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+//一个简单的自定义加法小程序
+//int Add(int x,int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum = 0;
+//	sum = Add(a,b);//引用自定义函数ADD对值进行运算。
+//	printf("%d\n",sum);
+//	return 0;
+//}
+
+//#include <string.h>
+//int main()
+//{
+//	char arr1[] = "hello boy";
+//	char arr2[20] = "##########";
+//	printf("原arr2 = %s\n",arr2);
+//	strcpy(arr2,arr1);//格式是：strcpy(拷贝到某处的地址，需要拷贝的内容地址);
+//	//拷贝的字符串内容包括某位不显示的"\0"。不计数。
+//	//当被拷贝到某地时，原文内容本不应该被覆盖。
+//	但是，在拷贝的时候，将原内容中的"\0"一同拷贝了
+//	而字符串的计数与打印都是以"\0"进行结束的，使用后面内容将不在显示与计算。
+//	printf("先arr2 = %s\n",arr2);
+//	return 0;
+//}
+
+
+
+//#include<string.h>
+//int main()
+//{
+//	char arr[]="hello word";
+//	memset(arr,'*',5);
+//	//memset的格式：arr是需要改变的字符串位置，'*'是指更改的内容，5是指更改的数量。
+//	printf("arr = %s\n",arr);
+//	return 0;
+//}
+
+
+//比较两个数之间的较大值
+//int get_max(int x,int y)
+//{
+//	if (x>y)
+//		return x;
+//	else
+//		return y;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = get_max(a,b);
+//	printf("max = %d\n",max);
+//	return 0;
+//}
+
+
+////相互替换两个整数值
+////void Exchange1(int x,int y)
+////{
+//	//此处由于实参与形参的缘故，x与y是两个新开辟的存放数据的内存空间，影响不了原来的a与b，所以就算使用了看似正确的自定义函数，依旧不能替换。
+////	int tmp = 0;
+////	tmp = x;
+////	x = y;
+////	y = tmp;
+////}
+////int main()
+////{
+////	int a = 10;
+////	int b = 20;
+////	printf("a = %d b = %d\n",a,b);
+////	Exchange1(a,b);
+////	printf("a = %d b = %d\n",a,b);
+////
+////	return 0;
+////不能正确相互替换
+////}
+//void Exchange2(int* pa, int* pb)
+//{
+//	//此处采用指针变量，不创建新的与a和b无太大关联的内存空间，以指针变量pa与pb来存放a与b的地址，改变指针变量，从而改变指针变量所指的实际内存数据。
+//	int tmp = 0;
+//	tmp = *pa;//*pa是指解引用操作
+//	*pa = *pb;
+//	*pb = tmp;
+//}
+//int main()
+//{
+//	//此处采用非自定义函数的写法，比较冗余。
+//	//int a = 10;
+//	//int b = 20;
+//	//int tmp = 0;
+//	//tmp = a;
+//	//a = b;
+//	//b = tmp;
+//	//printf("a = %d b = %d",a,b);
+//
+//	//采用自定义函数的写法
+//	int a = 10;
+//	int b = 20;
+//	printf("a = %d b = %d\n",a,b);
+//	Exchange2(&a,&b);
+//	printf("a = %d b = %d\n",a,b);
+//
+//	return 0;
+//}
+
+
+
+//#include <string.h>
+//int main()
+//{
+//	char arr1[]="hello boy";
+//	char arr2[20]="####################";
+//	strcpy(arr2,arr1);
+//	return 0;
+//}
