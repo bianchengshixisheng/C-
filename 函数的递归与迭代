@@ -1,0 +1,174 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//
+//#include<stdio.h>
+//void print(int n)
+//{
+//	if (n>9)
+//	{
+//		print(n/10);
+//	}
+//	printf("%d ",n%10);
+//}
+//int main()
+//{
+//
+//	//unsigned int 是指无符号的正整数
+//	unsigned int num = 0;
+//	scanf("%d ",&num);
+//	//递归开始
+//	print(num);
+//}
+
+
+
+
+
+//int my_strlen(char* len)
+////第一次递归针对元素h
+//{
+//	int count = 0;
+//	while (*len != '\0')
+//	{
+//		count++;//计数器 
+//		len++;//将调用移动到数组中的第二个元素
+//	}
+//}
+//
+//#include<string.h>
+//#include<stdio.h>
+//int main()
+//{
+//	char arr[]="hello";
+//	//int len = strlen(arr);
+//	int len = my_strlen(arr);//使用自己定义的函数
+//	//使用自定义函数传参是，传递的是数组时，传递过去的并不是数组，而是数组的第一个元素的地址
+//	printf("%d ",len);
+//	return 0;
+//
+//}
+
+
+
+
+//求n的阶乘
+//一般的方式求n的阶乘
+//int factorial(int num)
+//{
+//	int i = 0;
+//	int ret = 1;
+//	for(i=1 ; i<=num ;i++)
+//	{
+//		ret*=i;
+//	}	
+//	return ret;
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int num = 0;
+//	int ret = 0;
+//	scanf("%d",&num);
+//	//printf("%d\n",num);
+//	ret = factorial(num);
+//	printf("%d\n",ret);
+//	return 0;
+//}
+
+
+//采用迭代的方式求n的阶乘
+//int factorial(int num)
+//{
+//	if (num<=1)
+//		return 1;
+//	else
+//		return num*factorial(n-1);
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int num = 0;
+//	int ret = 0;
+//	scanf("%d\n",&num);
+//	ret = factorial(num);
+//	printf("%d\n",ret);
+//	return 0;
+//}
+
+
+
+//计算第n个斐波那契数列
+//#include<stdio.h>
+//int Fib(int n)
+//{
+//	if(n<=2)
+//		return 1;
+//	else
+//		return Fib(n-1) + Fib(n-2);
+//}
+//int main()
+//{
+//	int num = 0;
+//	int ret = 0;
+//	scanf("%d",&num);//此处不能有\n的使用
+//	ret = Fib(num);
+//	printf("%d\n",ret);
+//	return 0;
+//}
+
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	if(*str != '\0')
+		return 1+my_strlen(str + 1);
+	else
+		return 0;
+}
+int main()
+{
+	char arr[]="abc";
+	int len = my_strlen(arr);
+	printf("len = %d\n",len);
+	return 0;
+}
+
+////求第n个斐波那契数列的值   采用迭代的方式
+//#include<stdio.h>
+//int Fib(int n)
+//{
+//	if(n<=2)
+//		return 1;
+//	else
+//		return Fib(n-1) + Fib(n-2);
+//}
+//int main()
+//{
+//	int n = 0,ret = 0;
+//	scanf("%d",&n);
+//	ret = Fib(n);
+//	printf("Fib = %d\n",ret);
+//	return 0;
+//}
+
+////求第n个斐波那契数列的值  采用循环的方式
+//#include<stdio.h>
+//int Fib(int n)
+//{
+//	int a = 1,b = 1,c = 1;
+//	while(n>2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d",&n);
+//	ret = Fib(n);
+//	printf("Fib = %d\n",ret);
+//	return 0;
+//}
