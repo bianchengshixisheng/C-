@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+//冒泡排序
+#include<stdio.h>
+void bubble_sort(int arr[],int sz)
+{
+	//int sz = sizeof(arr)/sizeof(arr[0]);
+	//此处使用sizeof来计算数组arr的个数，是存在问题的，在其他代码块中引用数组，因为要节省空间，所以传递的是数组的第一个元素的地址，而非数组本身.
+	int i = 0;
+	for (i = 0;i<sz;i++)
+	{
+		int j = 0;
+		for (j = 0;j<sz-1;j++)
+		{
+			if (arr[j] > arr[j+1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = tmp;
+			}
+		}
+	}
+}
+
+int main()
+{
+	int arr[]={1,2,3,4,5,6,7,8,9,0};
+	int i = 0;
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	bubble_sort(arr,sz);
+	for( i = 0; i<sz;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+	return 0;
+}
+
+
+
+#include<stdio.h>
+int main()
+{
+	int arr[]={1,2,3,4,5,6,7,8};
+	printf("%p\n",arr);//打印的是整个数组的地址，数组的地址也就是数组第一个元素的地址
+	printf("%p\n",arr[0]);//打印的第一个元素的地址也等同于整个数组的地址
+	printf("%p\n",&arr);//打印的是整个数组的地址，与printf("%p\n",arr);不相同，此处是指整个数组。
+	return 0;
+}
